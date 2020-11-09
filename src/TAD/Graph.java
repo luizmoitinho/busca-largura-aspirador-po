@@ -28,11 +28,11 @@ public class Graph {
 		
 		this.vertexList[0].wasVisited = true;
 		this.displayVertex(0);
-		queue.add(0);
+		this.queue.add(0);
 		int v2;
 		
-		while(!queue.isEmpty()) {
-			int v1 = queue.remove(0);
+		while(!this.queue.isEmpty()) {
+			int v1 = this.queue.remove(0);
 			while((v2 = this.getAdjUnvisitedVertex(v1)) != -1) {
 				vertexList[v2].wasVisited = true;
 				this.displayVertex(v2);
@@ -77,9 +77,14 @@ public class Graph {
 	}
 	
 	public void showAdjMat() {
+		System.out.printf("    ");
+		for(int i=0;i<this.adjMat.length;i++)
+			System.out.printf("%7d",i);
+		System.out.println(" \n");
 		for(int i=0;i<this.adjMat.length;i++) {
+			System.out.printf("%4d",i);
 			for(int j=0;j<this.adjMat.length;j++) {
-				System.out.printf("%4d",this.adjMat[i][j]);
+				System.out.printf("%7d",this.adjMat[i][j]);
 			}
 			System.out.println(" ");
 		}
