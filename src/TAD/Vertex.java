@@ -5,14 +5,13 @@ public class Vertex {
 	
 	protected char label;
 	protected boolean wasVisited;
-	
 	protected char position;
 	
 	private static int[] trash = {1,1}; 
 	
 	public Vertex(char label) {
 		this.label = label;
-		wasVisited = false;
+		this.wasVisited = false;
 	}
 	
 	

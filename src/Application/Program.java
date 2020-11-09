@@ -18,9 +18,9 @@ public class Program {
 		graph.addVertex('5');
 		graph.addVertex('6');
 		graph.addVertex('7');
-		
-		
 		graph.showListVertex();
+		
+		
 		graph.addEdge(0, 0); //0 -> 0
 		graph.addEdge(0, 1); //0 -> 1
 		graph.addEdge(0, 2); //0 -> 2
@@ -43,11 +43,14 @@ public class Program {
 		graph.addEdge(5, 5); //5 -> 5
 		graph.addEdge(5, 4); //5 -> 4
 
-		
 		System.out.println("\n Matriz de adjacência \n");
 		graph.showAdjMat();
 		
+		graph.bfs();
+		
 		
 	}
+	
+
 
 }
