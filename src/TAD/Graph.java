@@ -48,9 +48,9 @@ public class Graph {
 	private int getAdjUnvisitedVertex(int vertex) {
 		for(int i=0; i<this.adjMat[vertex].length;i++) {
 			for(int j=0;j<this.nVerts;j++) {
-				if(this.adjMat[vertex][i] == this.vertexList[i].label && this.vertexList[i].wasVisited)
+				if(this.adjMat[vertex][i] == Integer.parseInt(String.valueOf(this.vertexList[i].label)) && !this.vertexList[i].wasVisited) {
 					return i;
-				
+				}	
 			}
 		}	
 		return -1;
