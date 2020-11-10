@@ -40,9 +40,9 @@ class Graph {
 
 // -------------------------------------------------------------
 	public void bfs() {
-		vertexList[0].wasVisited = true;
-		displayVertex(0);
-		theQueue.insert(0);
+		vertexList[1].wasVisited = true;
+		displayVertex(1);
+		theQueue.insert(1);
 		int v2;
 
 		while (!theQueue.isEmpty()) {
