@@ -43,7 +43,7 @@ class Graph {
 // -------------------------------------------------------------
 	public void bfs() {
 		int initialState = getRandomNumber(0, 7);
-		System.out.println("\nEstado inicial gerado aleatoriamente: "+initialState);
+		System.out.println("\nEstado inicial: "+vertexList[initialState].label+"\n");
 		vertexList[initialState].wasVisited = true;
 		displayVertex(initialState);
 		theQueue.insert(initialState);

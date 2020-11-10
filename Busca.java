@@ -40,20 +40,11 @@ class Busca
 		
 		theGraph.addEdge(7, 7, true); //H -> h
 
-		theGraph.showAdjMat();
-		
-	
+		//theGraph.showAdjMat();
 		System.out.print("\nNos Visitados LARGURA: ");
-		theGraph.bfs(); 
+		theGraph.bfs();
       
       
-//      System.out.print("Nos Visitados PROFUNDIDADE: ");
-//      theGraph.dfs();  
- 
-//      System.out.print("\nArvore Geradora Minima: ");
-//      theGraph.mst();  
-//
-//      System.out.println();
       
       }
    } 
