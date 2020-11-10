@@ -2,10 +2,10 @@
 class Vertex {
 	public char label;
 	public boolean wasVisited;
-	public char position;
+	public int position;
 	public int[] trash;
 
-	public Vertex(char lab,char position, int[]trash) {
+	public Vertex(char lab, int position, int[]trash) {
 		this.label = lab;
 		this.position = position;
 		this.trash = trash;
@@ -22,11 +22,11 @@ class Vertex {
 		return this.trash[index] == 0;
 	}
 	
-	public char getPosition() {
+	public int getPosition() {
 		return position;
 	}
 
-	public void setPosition(char position) {
+	public void setPosition(int position) {
 		this.position = position;
 	}
 	

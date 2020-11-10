@@ -22,14 +22,15 @@ class Graph {
 	}
 
 // ------------------------------------------------------------
-	public void addVertex(char lab,char position, int[]trash) {
+	public void addVertex(char lab,int position, int[]trash) {
 		vertexList[nVerts++] = new Vertex(lab,position, trash);
 	}
 
 // ------------------------------------------------------------
-	public void addEdge(int start, int end) {
+	public void addEdge(int start, int end, boolean digrafo) {
 		adjMat[start][end] = 1;
-		adjMat[end][start] = 1;
+		if(digrafo)
+			adjMat[end][start] = 1;
 	}
 
 // ------------------------------------------------------------
@@ -39,24 +40,21 @@ class Graph {
 
 // -------------------------------------------------------------
 	public void bfs() {
-		vertexList[0].wasVisited = true;
-		displayVertex(0);
-		theQueue.insert(0);
+		vertexList[1].wasVisited = true;
+		displayVertex(1);
+		theQueue.insert(1);
 		int v2;
 
 		while (!theQueue.isEmpty()) {
 			int v1 = theQueue.remove();
-			while ((v2 = getAdjUnvisitedVertex(v1)) != -1 && !(vertexList[v2].isClean(0) && (vertexList[v2].isClean(1))) ) {
+			while ((v2 = getAdjUnvisitedVertex(v1)) != -1) {
 				
-				if(vertexList[v2].getPosition() == 'L')
-					vertexList[v2].clean(0);
-				else
-					vertexList[v2].clean(1);
-					
 				vertexList[v2].wasVisited = true;
-				System.out.println("\n\n"+vertexList[v2].ToString());
-				//displayVertex(v2);
+				//System.out.println("\n\n"+vertexList[v2].ToString());
+				displayVertex(v2);
 				theQueue.insert(v2);
+				if((vertexList[v2].isClean(0) && (vertexList[v2].isClean(1))))
+						return;
 			}
 		}
 		
