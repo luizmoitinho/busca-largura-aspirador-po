@@ -1,5 +1,3 @@
-import java.util.Random;
-
 class Graph {
 	private final int MAX_VERTS = 8;
 	private Vertex vertexList[];
@@ -42,12 +40,9 @@ class Graph {
 
 // -------------------------------------------------------------
 	public void bfs() {
-		int initialState = getRandomNumber(0, 7);
-		System.out.println("\nEstado inicial gerado aleatoriamente: "+initialState);
-		vertexList[initialState].wasVisited = true;
-		displayVertex(initialState);
-		theQueue.insert(initialState);
-		
+		vertexList[0].wasVisited = true;
+		displayVertex(0);
+		theQueue.insert(0);
 		int v2;
 
 		while (!theQueue.isEmpty()) {
@@ -144,11 +139,6 @@ class Graph {
 					" | trash {"+this.vertexList[i].isClean(0)+", "+this.vertexList[i].isClean(1)+"}");
 		}
 
-	}
-	
-	public int getRandomNumber(int min, int max) {
-		Random rnd = new Random();
-		return rnd.nextInt((max - min) + 1) + min;
 	}
 
 }
